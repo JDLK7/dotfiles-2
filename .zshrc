@@ -17,6 +17,10 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="spaceship"
 
+if [ $ZSH_THEME = "spaceship" ]; then
+  [[ ! -f $HOME/.spaceship.zsh ]] || source $HOME/.spaceship.zsh
+fi
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
