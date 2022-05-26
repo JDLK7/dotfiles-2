@@ -99,14 +99,17 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f $HOME/.env.zsh ]] || source $HOME/.env.zsh
 
 eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa
+[[ ! -f $HOME/.env.zsh ]] || ssh-add ~/.ssh/id_rsa
 
 # interactive shell commands 
 
 # pyenv 
-eval "$(pyenv init --path)"
-eval "$(pyenv virtualenv-init -)" # interactive shell commands 
-# eval "$(pyenv init -)"
+if command -v pyenv &> /dev/null
+then
+  eval "$(pyenv init --path)"
+  eval "$(pyenv virtualenv-init -)" # interactive shell commands 
+  # eval "$(pyenv init -)"
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -117,6 +120,12 @@ eval "$(pyenv virtualenv-init -)" # interactive shell commands
 # export PATH="$PATH:$HOME/.rvm/bin"
 
 # Enable chruby
+if command -v chruby &> /dev/null
+then
+  source /usr/local/opt/chruby/share/chruby/chruby.sh
+  source /usr/local/opt/chruby/share/chruby/auto.sh
+fi
+
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 
