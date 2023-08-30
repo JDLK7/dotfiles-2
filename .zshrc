@@ -102,6 +102,9 @@ source $ZSH/oh-my-zsh.sh
 # Load environment variables
 [[ ! -f $HOME/.env.zsh ]] || source $HOME/.env.zsh
 
+# Load custom functions
+[[ ! -f $HOME/.env.zsh ]] || source $HOME/.functions.zsh
+
 eval "$(ssh-agent -s)"
 [[ ! -f $HOME/.env.zsh ]] || ssh-add ~/.ssh/id_rsa
 

@@ -1,6 +1,6 @@
 alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias cdw='cd ~/Documents/workspace'
-alias cdp='cd ~/Documents/personal_workspace'
+alias cdw='cd ~/workspace/masmovil'
+alias cdp='cd ~/workspace/personal'
 alias kctx='kubectx'
 alias kns='kubens'
 alias k8s='kubectl'
